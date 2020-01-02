@@ -1,0 +1,7 @@
+{
+    "packageName": "ingestion",
+    "projectName": "ingestion-api",
+    "modelPropertyNaming": "camelCase",
+    "packageVersion": "1.2.0",
+    "packageUrl": "https://pypi.org/project/ingestion-api/" 
+}
