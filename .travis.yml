@@ -1,0 +1,9 @@
+deploy:
+  provider: pypi
+  user: mosorio
+  password:
+    secure: ZNprMPLNRvCLGEf1powBJoFW+WbEKVM5I5+jdFNdA312kuXth19be2PG1wOBWYZovT5EPgDbSJ4ZRZD95NXgUGXUoetKtTZs50J5SNtl+PHxWmjqG6UBX30IQ4hBtTPG8zcHX/mkpYNqkDIWFCfz8RC14oNW14sL4EoYTZHdBpXcz90wADD/+/X/bJxGQsNLJgwEtRljepXcBOu3DMxIOgw15ock0EG5YroOsZjPhi4R+uHuKNKz8lwuClQkcAl/YLRKp6lQN6ajn8CQ8OHcZAsY1QzYM+jo6ENY94O9O4+x1o367Ez/h8vkSQGuW8tb0hmYb1PyEMZZ++usUtRlSbOwGustOzL6EmwEucoxkNfJ8VhQmD9OLZGhNMKqrfRz7IXUjsNR9S6+TD+YS67Dh+E/OcB63bzHxjLKmF8I4PfFwNxvcXipo0G5EDVkfGIz3pMFU8LXnPOa/kQb3YO01DglZ42SV63ZXStj6x5WI1huT6hqSVUyj1nivhZsT0zkEsrg1SB4qxDr0QOHvEvtYGy5lf2dJk1IIFTuPbtRTD+3zEwrTijD3EuBK6X+ZtoO6BD+WkChOESj2uSl+MJKvESaaIwkblt4t3jnzU5iHxxa5XYUUT8nWbreRYVSAW3mNK12dDn3rQkmb5sPufUuBqJx4suUhRvab7tQ9pvr68g=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: mintproject/ingestion-api-client
