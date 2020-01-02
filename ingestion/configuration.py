@@ -46,7 +46,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "http://localhost:8080/v1.2.0"
+        self.host = "https://ingestion.mint.isi.edu/v1.2.0"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -236,11 +236,11 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         """
         return [
             {
-                'url': "http://localhost:8080/v1.2.0",
+                'url': "https://ingestion.mint.isi.edu/v1.2.0",
                 'description': "No description provided",
             },
             {
-                'url': "https://ingestion.mint.isi.edu/v1.2.0",
+                'url': "http://localhost:8080/v1.2.0",
                 'description': "No description provided",
             }
         ]
