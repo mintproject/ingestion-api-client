@@ -46,7 +46,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "https://ingestion.mint.isi.edu/v1.2.0"
+        self.host = "http://localhost:8080/v1.2.0"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -226,7 +226,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.2.0\n"\
-               "SDK Package Version: 1.2.0".\
+               "SDK Package Version: 1.3.0".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -236,11 +236,11 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         """
         return [
             {
-                'url': "https://ingestion.mint.isi.edu/v1.2.0",
+                'url': "http://localhost:8080/v1.2.0",
                 'description': "No description provided",
             },
             {
-                'url': "http://localhost:8080/v1.2.0",
+                'url': "https://ingestion.mint.isi.edu/v1.2.0",
                 'description': "No description provided",
             }
         ]

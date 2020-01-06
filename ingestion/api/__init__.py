@@ -4,4 +4,4 @@ from __future__ import absolute_import
 
 # import apis into api package
 from ingestion.api.default_api import DefaultApi
-from ingestion.api.thread_api import ThreadApi
+from ingestion.api.summary_api import SummaryApi

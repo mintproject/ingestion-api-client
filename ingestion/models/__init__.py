@@ -15,4 +15,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from ingestion.models.modelthread import Modelthread
+from ingestion.models.problem_formulation import ProblemFormulation
+from ingestion.models.scenario import Scenario
+from ingestion.models.summary import Summary
 from ingestion.models.thread import Thread

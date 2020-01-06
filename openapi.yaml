@@ -4,9 +4,9 @@ info:
   title: ingestion
   version: 1.2.0
 servers:
-- url: https://ingestion.mint.isi.edu/v1.2.0
-  description: ""
 - url: http://localhost:8080/v1.2.0
+  description: ""
+- url: https://ingestion.mint.isi.edu/v1.2.0
   description: ""
 paths:
   /modelthreads:
@@ -28,6 +28,29 @@ paths:
       operationId: createmodelthread
       summary: Create a modelthread
       description: Creates a new instance of a `modelthread`.
+  /summary/{thread_id}:
+    get:
+      description: Gets the details of a single instance of a summary
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: thread_id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/summary'
+          description: Gets the details of a single instance of Summary
+      summary: Get a Summary
+      tags:
+      - summary
+  /summary:
+    summary: Obtain the summary
+    description: Obtain the summary
     get:
       parameters:
       - name: limit
@@ -48,6 +71,7 @@ paths:
         description: ""
         schema:
           type: string
+          default: ""
         in: query
       responses:
         "200":
@@ -56,36 +80,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/thread'
-          description: Successful response - returns an array of `thread` entities.
-      operationId: getthreads
-      summary: List All threads
-      description: Gets a list of all `thread` entities.
+                  $ref: '#/components/schemas/summary'
+          description: Successful response - returns an array of `summary` entities.
+      summary: List All summary
+      description: Gets a list of all `summary` entities.
       tags:
-        - thread
-  /modelthreads/{thread_id}:
-    get:
-      description: Gets the details of a single instance of a Thread
-      parameters:
-      - description: The ID of the resource
-        in: path
-        name: thread_id
-        required: true
-        schema:
-          type: string
-      responses:
-        200:
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/thread'
-          description: Gets the details of a single instance of Thread
-      summary: Get a Thread
-      tags:
-      - thread
-  /summary:
-    summary: Obtain the summary of a modelthead
-    description: Obtain the summary of a modelthead
+        - summary    
     post:
       requestBody:
         description: Obtain a `summary`
@@ -102,6 +102,15 @@ paths:
       description: Creates a new instance of a `modelthread`.
 components:
   schemas:
+    summary:
+      type: object
+      properties:
+        problem_formulation:
+          $ref: '#/components/schemas/problem_formulation'
+        scenario:
+          $ref: '#/components/schemas/scenario'
+        thread:
+          $ref: '#/components/schemas/thread'
     modelthread:
       description: ""
       required:
@@ -119,6 +128,33 @@ components:
         thread_id:
           description: ""
           type: string
+    scenario:
+      description: ""
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        region:
+          type: string
+        subregion:
+          type: string
+        time_period:
+          type: object
+    problem_formulation:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        region:
+          type: string
+        subregion:
+          type: string
+        time_period:
+          type: object
     thread:
       description: ""
       type: object

@@ -1,6 +1,6 @@
 # ingestion.DefaultApi
 
-All URIs are relative to *https://ingestion.mint.isi.edu/v1.2.0*
+All URIs are relative to *http://localhost:8080/v1.2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
