@@ -66,7 +66,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8080/v1.2.0*
+All URIs are relative to *https://ingestion.mint.isi.edu/v1.2.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
