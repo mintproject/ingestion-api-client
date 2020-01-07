@@ -5,6 +5,7 @@ All URIs are relative to *https://ingestion.mint.isi.edu/v1.2.0*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**summary_get**](SummaryApi.md#summary_get) | **GET** /summary | List All summary
+[**summary_post**](SummaryApi.md#summary_post) | **POST** /summary | Create a summary
 [**summary_thread_id_get**](SummaryApi.md#summary_thread_id_get) | **GET** /summary/{thread_id} | Get a Summary
 
 
@@ -57,6 +58,55 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **summary_post**
+> SummaryResponse summary_post(modelthread)
+
+Create a summary
+
+Creates a new instance of a `modelthread`.
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import ingestion
+from ingestion.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = ingestion.SummaryApi()
+modelthread = ingestion.Modelthread() # Modelthread | Obtain a `summary`
+
+try:
+    # Create a summary
+    api_response = api_instance.summary_post(modelthread)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SummaryApi->summary_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **modelthread** | [**Modelthread**](Modelthread.md)| Obtain a &#x60;summary&#x60; | 
+
+### Return type
+
+[**SummaryResponse**](SummaryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

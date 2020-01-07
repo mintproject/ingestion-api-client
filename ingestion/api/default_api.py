@@ -36,13 +36,13 @@ class DefaultApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def createmodelthread(self, modelthread, **kwargs):  # noqa: E501
+    def modelthreads_post(self, modelthread, **kwargs):  # noqa: E501
         """Create a modelthread  # noqa: E501
 
         Creates a new instance of a `modelthread`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.createmodelthread(modelthread, async_req=True)
+        >>> thread = api.modelthreads_post(modelthread, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -53,18 +53,18 @@ class DefaultApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.createmodelthread_with_http_info(modelthread, **kwargs)  # noqa: E501
+            return self.modelthreads_post_with_http_info(modelthread, **kwargs)  # noqa: E501
         else:
-            (data) = self.createmodelthread_with_http_info(modelthread, **kwargs)  # noqa: E501
+            (data) = self.modelthreads_post_with_http_info(modelthread, **kwargs)  # noqa: E501
             return data
 
-    def createmodelthread_with_http_info(self, modelthread, **kwargs):  # noqa: E501
+    def modelthreads_post_with_http_info(self, modelthread, **kwargs):  # noqa: E501
         """Create a modelthread  # noqa: E501
 
         Creates a new instance of a `modelthread`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.createmodelthread_with_http_info(modelthread, async_req=True)
+        >>> thread = api.modelthreads_post_with_http_info(modelthread, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -86,14 +86,14 @@ class DefaultApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method createmodelthread" % key
+                    " to method modelthreads_post" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'modelthread' is set
         if ('modelthread' not in local_var_params or
                 local_var_params['modelthread'] is None):
-            raise ApiValueError("Missing the required parameter `modelthread` when calling `createmodelthread`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `modelthread` when calling `modelthreads_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -118,102 +118,6 @@ class DefaultApi(object):
 
         return self.api_client.call_api(
             '/modelthreads', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=local_var_params.get('async_req'),
-            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=local_var_params.get('_preload_content', True),
-            _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def get_summary(self, body, **kwargs):  # noqa: E501
-        """Create a summary  # noqa: E501
-
-        Creates a new instance of a `modelthread`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_summary(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param object body: Obtain a `summary` (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.get_summary_with_http_info(body, **kwargs)  # noqa: E501
-        else:
-            (data) = self.get_summary_with_http_info(body, **kwargs)  # noqa: E501
-            return data
-
-    def get_summary_with_http_info(self, body, **kwargs):  # noqa: E501
-        """Create a summary  # noqa: E501
-
-        Creates a new instance of a `modelthread`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_summary_with_http_info(body, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param object body: Obtain a `summary` (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        local_var_params = locals()
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        for key, val in six.iteritems(local_var_params['kwargs']):
-            if key not in all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_summary" % key
-                )
-            local_var_params[key] = val
-        del local_var_params['kwargs']
-        # verify the required parameter 'body' is set
-        if ('body' not in local_var_params or
-                local_var_params['body'] is None):
-            raise ApiValueError("Missing the required parameter `body` when calling `get_summary`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/summary', 'POST',
             path_params,
             query_params,
             header_params,

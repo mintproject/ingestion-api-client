@@ -25,7 +25,6 @@ paths:
       responses:
         "201":
           description: Successful response.
-      operationId: createmodelthread
       summary: Create a modelthread
       description: Creates a new instance of a `modelthread`.
   /summary/{thread_id}:
@@ -92,16 +91,26 @@ paths:
         content:
           application/json:
             schema:
-              type: object
+              $ref: '#/components/schemas/modelthread'
         required: true
       responses:
         "201":
-          description: Successful response.
-      operationId: get_summary
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/summary_response'
+          description: Gets a exported summary
       summary: Create a summary
       description: Creates a new instance of a `modelthread`.
+      tags:
+        - summary        
 components:
   schemas:
+    summary_response:
+      type: object
+      properties:
+        url:
+          type: string
     summary:
       type: object
       properties:

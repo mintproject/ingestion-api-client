@@ -14,7 +14,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.3.1"
+__version__ = "1.3.2"
 
 # import apis into sdk package
 from ingestion.api.default_api import DefaultApi
@@ -33,5 +33,6 @@ from ingestion.models.modelthread import Modelthread
 from ingestion.models.problem_formulation import ProblemFormulation
 from ingestion.models.scenario import Scenario
 from ingestion.models.summary import Summary
+from ingestion.models.summary_response import SummaryResponse
 from ingestion.models.thread import Thread
 
