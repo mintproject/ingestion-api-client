@@ -18,6 +18,7 @@ __version__ = "1.3.2"
 
 # import apis into sdk package
 from ingestion.api.default_api import DefaultApi
+from ingestion.api.result_api import ResultApi
 from ingestion.api.summary_api import SummaryApi
 
 # import ApiClient

@@ -9,6 +9,29 @@ servers:
 - url: http://localhost:8080/v1.2.0
   description: ""
 paths:
+  /results/{thread_id}:
+    get:
+      description: Gets the details of a single instance of a results
+      parameters:
+      - description: The ID of the resource
+        in: path
+        name: thread_id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: object
+            text/csv:
+              schema:
+                type: object                
+          description: Gets the details of a single result
+      summary: Get a result
+      tags:
+      - result
   /modelthreads:
     summary: Path used to manage the list of modelthreads.
     description: The REST endpoint/path used to list and create zero or more `modelthread`

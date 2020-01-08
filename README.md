@@ -71,6 +71,7 @@ All URIs are relative to *https://ingestion.mint.isi.edu/v1.2.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | [**modelthreads_post**](docs/DefaultApi.md#modelthreads_post) | **POST** /modelthreads | Create a modelthread
+*ResultApi* | [**results_thread_id_get**](docs/ResultApi.md#results_thread_id_get) | **GET** /results/{thread_id} | Get a result
 *SummaryApi* | [**summary_get**](docs/SummaryApi.md#summary_get) | **GET** /summary | List All summary
 *SummaryApi* | [**summary_post**](docs/SummaryApi.md#summary_post) | **POST** /summary | Create a summary
 *SummaryApi* | [**summary_thread_id_get**](docs/SummaryApi.md#summary_thread_id_get) | **GET** /summary/{thread_id} | Get a Summary
